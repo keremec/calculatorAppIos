@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ifG-L4-4fu">
-                                <rect key="frame" x="0.0" y="44" width="316.5" height="760"/>
+                                <rect key="frame" x="3" y="47" width="316.5" height="760"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="6gu-uF-xfL">
                                         <rect key="frame" x="0.0" y="0.0" width="316.5" height="106"/>
@@ -253,10 +253,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ifG-L4-4fu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0LD-4x-Kkm"/>
-                            <constraint firstItem="ifG-L4-4fu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5Q6-py-5Gy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ifG-L4-4fu" secondAttribute="bottom" id="FMe-oj-u9F"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ifG-L4-4fu" secondAttribute="trailing" id="bvy-z5-29V"/>
+                            <constraint firstItem="ifG-L4-4fu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="3" id="0LD-4x-Kkm"/>
+                            <constraint firstItem="ifG-L4-4fu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="3" id="5Q6-py-5Gy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ifG-L4-4fu" secondAttribute="bottom" constant="3" id="FMe-oj-u9F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ifG-L4-4fu" secondAttribute="trailing" constant="3" id="bvy-z5-29V"/>
                         </constraints>
                     </view>
                 </viewController>
