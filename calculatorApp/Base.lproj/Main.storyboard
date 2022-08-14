@@ -22,7 +22,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="6gu-uF-xfL">
                                         <rect key="frame" x="0.0" y="0.0" width="316.5" height="106"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="27" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7T-Et-2hS">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7T-Et-2hS">
                                                 <rect key="frame" x="0.0" y="0.0" width="251.5" height="106"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                                 <color key="textColor" systemColor="opaqueSeparatorColor"/>
@@ -39,7 +39,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="BWS-5e-Sx8">
                                         <rect key="frame" x="0.0" y="109" width="316.5" height="106"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="25+2" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otD-wz-oLH">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otD-wz-oLH">
                                                 <rect key="frame" x="0.0" y="0.0" width="251.5" height="106"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="64"/>
                                                 <nil key="textColor"/>
@@ -65,6 +65,9 @@
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
                                                     </preferredSymbolConfiguration>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rpQ-dK-FLR"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qH-8y-MZt">
                                                 <rect key="frame" x="80" y="0.0" width="76.5" height="106"/>
@@ -74,6 +77,9 @@
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
                                                     </preferredSymbolConfiguration>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonPercentage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tvc-dM-IRO"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kK7-8a-vDD">
                                                 <rect key="frame" x="159.5" y="0.0" width="77" height="106"/>
@@ -83,6 +89,9 @@
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
                                                     </preferredSymbolConfiguration>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonDiv:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zAR-d9-yKG"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pvr-XS-NRM">
                                                 <rect key="frame" x="239.5" y="0.0" width="77" height="106"/>
@@ -92,6 +101,9 @@
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
                                                     </preferredSymbolConfiguration>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonDel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y6B-uI-UgP"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -105,6 +117,9 @@
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonSeven:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rwN-Y5-YH5"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fE8-Vi-EVZ">
                                                 <rect key="frame" x="80" y="0.0" width="76.5" height="106"/>
@@ -113,6 +128,9 @@
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonEight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aHw-fU-BQm"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIj-bh-4Yo">
                                                 <rect key="frame" x="159.5" y="0.0" width="77" height="106"/>
@@ -121,6 +139,9 @@
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonNine:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pCQ-Of-QJL"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="jb4-WX-NjC">
                                                 <rect key="frame" x="239.5" y="0.0" width="77" height="106"/>
@@ -131,6 +152,9 @@
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
                                                     </preferredSymbolConfiguration>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonMul:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KCy-Ly-ZAd"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -144,6 +168,9 @@
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonFour:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d2d-mz-g9P"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JDV-qN-hxw">
                                                 <rect key="frame" x="80" y="0.0" width="76.5" height="106"/>
@@ -152,6 +179,9 @@
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonFive:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gM3-Hi-pQt"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmc-H6-6Hf">
                                                 <rect key="frame" x="159.5" y="0.0" width="77" height="106"/>
@@ -160,6 +190,9 @@
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonSix:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Muc-ld-t4Y"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BuF-Uk-NFw">
                                                 <rect key="frame" x="239.5" y="0.0" width="77" height="106"/>
@@ -169,6 +202,9 @@
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
                                                     </preferredSymbolConfiguration>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonSub:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hK1-oR-3BD"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -182,6 +218,9 @@
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iap-jA-5C6"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJ5-eq-Ido">
                                                 <rect key="frame" x="80" y="0.0" width="76.5" height="106"/>
@@ -190,6 +229,9 @@
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonTwo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JKg-WH-pT2"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AN8-3S-ZCS">
                                                 <rect key="frame" x="159.5" y="0.0" width="77" height="106"/>
@@ -198,6 +240,9 @@
                                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonThree:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LZY-aq-bAz"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="0qz-v1-6PX">
                                                 <rect key="frame" x="239.5" y="0.0" width="77" height="106"/>
@@ -208,6 +253,9 @@
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
                                                     </preferredSymbolConfiguration>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CMd-0H-k92"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -224,6 +272,9 @@
                                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
                                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="buttonZero:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E6A-UO-6WP"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oua-tV-Mcq">
                                                         <rect key="frame" x="80" y="0.0" width="76.5" height="106"/>
@@ -232,6 +283,9 @@
                                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="42"/>
                                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="buttonDecimal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vdy-3N-LmN"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -244,6 +298,9 @@
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
                                                     </preferredSymbolConfiguration>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="buttonEqual:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cpH-Zn-lSl"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -259,6 +316,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ifG-L4-4fu" secondAttribute="trailing" constant="3" id="bvy-z5-29V"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bLabel" destination="otD-wz-oLH" id="54e-4j-JD4"/>
+                        <outlet property="tLabel" destination="J7T-Et-2hS" id="qCO-jV-BKy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
