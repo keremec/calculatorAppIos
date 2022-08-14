@@ -6,8 +6,6 @@
 //
 
 
-//TODO Birden fazla nokta eklenebilme sorununu.
-
 import UIKit
 
 let listOfNumbers : [Character] = ["1","2","3","4","5","6","7","8","9","0"]
@@ -87,7 +85,6 @@ class ViewController: UIViewController {
     
     @IBAction func buttonEqual(_ sender: Any) {
         bLabel.text = tLabel.text == "" ? bLabel.text : tLabel.text
-        // TODO BURADAN BASAMAK UZUNLUK KONTROLU YAP
         tLabel.text = ""
     }
     
@@ -147,6 +144,11 @@ func buttonClick(b:String, s:inout String, t:inout String){
         s = "0"
     }
     
+    //prevent overflow, not always reliable but thats the safe range for double, no e10,e11 etc support :(
+    if (t.count > 10){
+        return
+    }
+    
     switch b {
         
     case ".":
@@ -157,7 +159,13 @@ func buttonClick(b:String, s:inout String, t:inout String){
             s += "0."
         }
         else{
-            s += "."
+            // guard prevents writing ip adresses on the calculator
+            let splits = s.components(separatedBy: ["+", "*", "-", "/", "%"])
+            guard (splits.last!.contains(".")) else {
+                s += "."
+                break
+            }
+
         }
         
     case "+", "-", "÷", "×", "%":
@@ -189,18 +197,10 @@ func buttonClick(b:String, s:inout String, t:inout String){
         else{
             s += b
         }
-
-        
-    case "0":
-        //prevent adding more zeros to the start
-        guard(s.count == 1 && s.last == "0")else{
-            s += b
-            break
-        }
         
     default:
-        //removes placeholder zero
-        if(s == "0" || s == "+"){
+        //removes placeholder zero and +
+        if(s == "0" || s == "+" || s == "-0"){
             _ = s.popLast()
         }
         s += b
