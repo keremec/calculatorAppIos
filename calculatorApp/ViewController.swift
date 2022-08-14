@@ -12,7 +12,8 @@ let listOfNumbers : [Character] = ["1","2","3","4","5","6","7","8","9","0"]
 
 class ViewController: UIViewController {
     
-
+    @IBOutlet weak var warningLabel: UILabel!
+    
     @IBOutlet weak var tLabel: UILabel!
     
     @IBOutlet weak var bLabel: UILabel!
@@ -145,7 +146,12 @@ func buttonClick(b:String, s:inout String, t:inout String){
     }
     
     //prevent overflow, not always reliable but thats the safe range for double, no e10,e11 etc support :(
-    if (t.count > 10){
+    guard (t.count < 10) else{
+        return
+    }
+    
+    let splits = s.components(separatedBy: ["+", "*", "-", "/", "%"])
+    guard (splits.last!.count < 10 && s.count < 30) else{
         return
     }
     
@@ -266,6 +272,10 @@ func fixDecimalDivision(s:String) -> String {
     }
     
     return exp
+}
+
+func overflowProtect(){
+    
 }
 
 
