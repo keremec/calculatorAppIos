@@ -24,11 +24,15 @@ class ViewController: UIViewController {
         bLabel.text = "0"
         
     }
-
+    
     
     //    Actions
     
     @IBAction func buttonDel(_ sender: Any) {
+        
+        //first overflow check
+        _ = overflowProtect(s: &bLabel.text!, t: &tLabel.text!, w: &warningLabel.text!)
+        
         _ = bLabel.text?.popLast()
         var exp = bLabel.text!
         
@@ -37,15 +41,9 @@ class ViewController: UIViewController {
             bLabel.text = "0"
             tLabel.text = ""
         }
-        //delete button will act like clear button if a large number, x/0 result or somehow irrational etc received
-        else if (exp.contains("e") || exp.contains("i") ){
-            tLabel.text = ""
-            bLabel.text = "0"
-        }
         // prevent calculation when deleting if - remain as a result of a negative calculation
         else if(bLabel.text == "-"){
             tLabel.text = ""
-            return
         }
         // do calculation when deleting characters also if exp.last is a operator, this deletes tge last operator from calculation string
         else if(exp.contains("+")||exp.contains("-")||exp.contains("×")||exp.contains("÷")||exp.contains("%")){
@@ -54,6 +52,9 @@ class ViewController: UIViewController {
             }
             tLabel.text = calculateResult(s: exp).cleanValue
         }
+        
+        //last overflow check after operation
+        _ = overflowProtect(s: &bLabel.text!, t: &tLabel.text!, w: &warningLabel.text!)
         
         
     }
@@ -65,23 +66,23 @@ class ViewController: UIViewController {
     
     
     @IBAction func buttonPercentage(_ sender: Any) {
-        buttonClick(b: "%", s: &bLabel.text!, t:&tLabel.text!)
+        buttonClick(b: "%", s: &bLabel.text!, t:&tLabel.text!, w:&warningLabel.text!)
     }
     
     @IBAction func buttonDiv(_ sender: Any) {
-        buttonClick(b: "÷", s: &bLabel.text!, t:&tLabel.text!)
+        buttonClick(b: "÷", s: &bLabel.text!, t:&tLabel.text!, w:&warningLabel.text!)
     }
     
     @IBAction func buttonMul(_ sender: Any) {
-        buttonClick(b: "×", s: &bLabel.text!, t:&tLabel.text!)
+        buttonClick(b: "×", s: &bLabel.text!, t:&tLabel.text!, w:&warningLabel.text!)
     }
     
     @IBAction func buttonSub(_ sender: Any) {
-        buttonClick(b: "-", s: &bLabel.text!, t:&tLabel.text!)
+        buttonClick(b: "-", s: &bLabel.text!, t:&tLabel.text!, w:&warningLabel.text!)
     }
     
     @IBAction func buttonAdd(_ sender: Any) {
-        buttonClick(b: "+", s: &bLabel.text!, t:&tLabel.text!)
+        buttonClick(b: "+", s: &bLabel.text!, t:&tLabel.text!, w:&warningLabel.text!)
     }
     
     @IBAction func buttonEqual(_ sender: Any) {
@@ -93,65 +94,54 @@ class ViewController: UIViewController {
     //    Numpad
     
     @IBAction func buttonDecimal(_ sender: Any) {
-        buttonClick(b: ".", s: &bLabel.text!, t:&tLabel.text!)
+        buttonClick(b: ".", s: &bLabel.text!, t:&tLabel.text!, w:&warningLabel.text!)
     }
     
     @IBAction func buttonZero(_ sender: Any) {
-        buttonClick(b: "0", s: &bLabel.text!, t:&tLabel.text!)
+        buttonClick(b: "0", s: &bLabel.text!, t:&tLabel.text!, w:&warningLabel.text!)
     }
     
     @IBAction func buttonOne(_ sender: Any) {
-        buttonClick(b: "1", s: &bLabel.text!, t:&tLabel.text!)
+        buttonClick(b: "1", s: &bLabel.text!, t:&tLabel.text!, w:&warningLabel.text!)
     }
     
     @IBAction func buttonTwo(_ sender: Any) {
-        buttonClick(b: "2", s: &bLabel.text!, t:&tLabel.text!)
+        buttonClick(b: "2", s: &bLabel.text!, t:&tLabel.text!, w:&warningLabel.text!)
     }
     
     @IBAction func buttonThree(_ sender: Any) {
-        buttonClick(b: "3", s: &bLabel.text!, t:&tLabel.text!)
+        buttonClick(b: "3", s: &bLabel.text!, t:&tLabel.text!, w:&warningLabel.text!)
     }
     
     @IBAction func buttonFour(_ sender: Any) {
-        buttonClick(b: "4", s: &bLabel.text!, t:&tLabel.text!)
+        buttonClick(b: "4", s: &bLabel.text!, t:&tLabel.text!, w:&warningLabel.text!)
     }
     
     @IBAction func buttonFive(_ sender: Any) {
-        buttonClick(b: "5", s: &bLabel.text!, t:&tLabel.text!)
+        buttonClick(b: "5", s: &bLabel.text!, t:&tLabel.text!, w:&warningLabel.text!)
     }
     
     @IBAction func buttonSix(_ sender: Any) {
-        buttonClick(b: "6", s: &bLabel.text!, t:&tLabel.text!)
+        buttonClick(b: "6", s: &bLabel.text!, t:&tLabel.text!, w:&warningLabel.text!)
     }
     
     @IBAction func buttonSeven(_ sender: Any) {
-        buttonClick(b: "7", s: &bLabel.text!, t:&tLabel.text!)
+        buttonClick(b: "7", s: &bLabel.text!, t:&tLabel.text!, w:&warningLabel.text!)
     }
     
     @IBAction func buttonEight(_ sender: Any) {
-        buttonClick(b: "8", s: &bLabel.text!, t:&tLabel.text!)
+        buttonClick(b: "8", s: &bLabel.text!, t:&tLabel.text!, w:&warningLabel.text!)
     }
     
     @IBAction func buttonNine(_ sender: Any) {
-        buttonClick(b: "9", s: &bLabel.text!, t:&tLabel.text!)
+        buttonClick(b: "9", s: &bLabel.text!, t:&tLabel.text!, w:&warningLabel.text!)
     }
 }
 
-func buttonClick(b:String, s:inout String, t:inout String){
-
-    // auto clear results if a large number, x/0 result or somehow irrational etc received
-    if (s.contains("e") || s.contains("i") ){
-        t = ""
-        s = "0"
-    }
+func buttonClick(b:String, s:inout String, t:inout String, w:inout String){
     
-    //prevent overflow, not always reliable but thats the safe range for double, no e10,e11 etc support :(
-    guard (t.count < 10) else{
-        return
-    }
-    
-    let splits = s.components(separatedBy: ["+", "*", "-", "/", "%"])
-    guard (splits.last!.count < 10 && s.count < 30) else{
+    // if there is a overflow or an error, input buttons will not work
+    if(overflowProtect(s: &s, t: &t, w: &w)){
         return
     }
     
@@ -171,7 +161,7 @@ func buttonClick(b:String, s:inout String, t:inout String){
                 s += "."
                 break
             }
-
+            
         }
         
     case "+", "-", "÷", "×", "%":
@@ -213,14 +203,14 @@ func buttonClick(b:String, s:inout String, t:inout String){
     }
     
     
-
+    
     
     //Making Calculation
     if(listOfNumbers.contains(s.last!) && (s.contains("+")||s.contains("-")||s.contains("×")||s.contains("÷")||s.contains("%"))){
         t = calculateResult(s: s).cleanValue
     }
     
-
+    
 }
 
 
@@ -274,7 +264,33 @@ func fixDecimalDivision(s:String) -> String {
     return exp
 }
 
-func overflowProtect(){
+func overflowProtect(s:inout String, t:inout String, w:inout String) -> Bool{
+    
+    // auto clear results if a large number, x/0 result or somehow irrational etc received
+    if (t.contains("e") || t.contains("i") ){
+        w = "!"
+        return true
+    }
+    //also delete button will act like clear button if a large number, x/0 result or somehow irrational etc received
+    if (s.contains("e") || s.contains("i") ){
+        t = ""
+        s = "0"
+    }
+    
+    //prevent overflow, not always reliable but thats the safe range for double, no e10,e11 etc support :(
+    guard (t.count < 10) else{
+        w = "!"
+        return true
+    }
+    
+    let splits = s.components(separatedBy: ["+", "*", "-", "/", "%"])
+    guard (splits.last!.count < 10 && s.count < 30) else{
+        w = "!"
+        return true
+    }
+    
+    w = ""
+    return false
     
 }
 
@@ -282,7 +298,7 @@ func overflowProtect(){
 // cool extension for double. If decimal point is zero, it just removes it. also return it as a string
 extension Double {
     var cleanValue: String {
-       return self.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)
+        return self.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)
     }
-
+    
 }
