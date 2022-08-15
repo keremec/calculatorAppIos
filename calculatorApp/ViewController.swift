@@ -231,7 +231,7 @@ func calculateResult(s:String) -> Double {
     let expression = NSExpression(format: exp)
     
     if var result = expression.expressionValue(with: nil, context: nil) as? Double{
-        //round the decimal points
+        //round the decimal points and limit the decimal area. example: 10 = smaller decimal part. 100000 = bigger decimal part
         result = Double(round(1000000*result)/1000000)
         return result
     }
