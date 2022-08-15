@@ -186,7 +186,7 @@ func buttonClick(b:String, s:inout String, t:inout String, w:inout String){
             _ = s.popLast()
             s += b
         }
-        // prevents "+*" situation
+        // prevents "+*", "÷-" etc situations. negative declaration via minus is only allowed in the first entry
         else if(!listOfNumbers.contains(s.last!)){
             break
         }
